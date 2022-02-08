@@ -32,46 +32,47 @@
             <input id="display" type="text" />
         </div>
         <div class="r">
-            <button onclick="press('7')">7</button>
-            <button onclick="press('8')">8</button>
-            <button onclick="press('9')">9</button>
-            <button onclick="press('+')">+</button>
-            <button onclick="press('(')">(</button>
-            <button onclick="press(')')">)</button>
+            <button onclick="disp('7')">7</button>
+            <button onclick="disp('8')">8</button>
+            <button onclick="disp('9')">9</button>
+            <button onclick="disp('+')">+</button>
+            <button onclick="disp('(')">(</button>
+            <button onclick="disp(')')">)</button>
         </div>
         <div class="r">
-            <button onclick="press('4')">4</button>
-            <button onclick="press('5')">5</button>
-            <button onclick="press('6')">6</button>
-            <button onclick="press('-')">-</button>
+            <button onclick="disp('4')">4</button>
+            <button onclick="disp('5')">5</button>
+            <button onclick="disp('6')">6</button>
+            <button onclick="disp('-')">-</button>
         </div>
         <div class="r">
-            <button onclick="press('1')">1</button>
-            <button onclick="press('2')">2</button>
-            <button onclick="press('3')">3</button>
-            <button onclick="press('*')">*</button>
-            <button onclick="press('.')">.</button>
+            <button onclick="disp('1')">1</button>
+            <button onclick="disp('2')">2</button>
+            <button onclick="disp('3')">3</button>
+            <button onclick="disp('*')">*</button>
+            <button onclick="disp('.')">.</button>
+            <button onclick="disp('Math.tan(')">tan</button>
         </div>
         <div class="r">
-            <button onclick="clear1()">C</button>
-            <button onclick="press('0')">0</button>
+            <button onclick="C()">C</button>
+            <button onclick="disp('0')">0</button>
             <button onclick="calc()">=</button>
-            <button onclick="press('/')">/</button>
-            <button onclick="press('Math.sin(')">sin</button>
-            <button onclick="press('Math.cos(')">cos</button>
+            <button onclick="disp('/')">/</button>
+            <button onclick="disp('Math.sin(')">sin</button>
+            <button onclick="disp('Math.cos(')">cos</button>
         </div>
     </div>
     
     <script>
         let display = document.getElementById("display");
     
-        function clear1() {
+        function C() {
             display.value = "";
         }
         function calc() {
             display.value = eval(display.value);
         }
-        function press(x) {
+        function disp(x) {
             display.value += x;
         }
     </script>
