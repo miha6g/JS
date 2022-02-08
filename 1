@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="UTF-8" />
+    <style>
+        body { height: 100vh; }
+        #calc { 
+            margin: auto; 
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #display,button {
+            width: 120px;
+            padding: 10px;
+            margin: 10px;
+            border: 10px solid gray;
+            border-radius: 10px;
+            box-shadow: 2px 2px gray;
+            font: bold 3em Impact;
+            outline: none;
+        
+        }
+        #display {
+            width: 660px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="calc">
+        <div class="r">
+            <input id="display" type="text" />
+        </div>
+        <div class="r">
+            <button onclick="press('7')">7</button>
+            <button onclick="press('8')">8</button>
+            <button onclick="press('9')">9</button>
+            <button onclick="press('+')">+</button>
+            <button onclick="press('(')">(</button>
+            <button onclick="press(')')">)</button>
+        </div>
+        <div class="r">
+            <button onclick="press('4')">4</button>
+            <button onclick="press('5')">5</button>
+            <button onclick="press('6')">6</button>
+            <button onclick="press('-')">-</button>
+        </div>
+        <div class="r">
+            <button onclick="press('1')">1</button>
+            <button onclick="press('2')">2</button>
+            <button onclick="press('3')">3</button>
+            <button onclick="press('*')">*</button>
+            <button onclick="press('.')">.</button>
+        </div>
+        <div class="r">
+            <button onclick="clear1()">C</button>
+            <button onclick="press('0')">0</button>
+            <button onclick="calc()">=</button>
+            <button onclick="press('/')">/</button>
+            <button onclick="press('Math.sin(')">sin</button>
+            <button onclick="press('Math.cos(')">cos</button>
+        </div>
+    </div>
+    
+    <script>
+        let display = document.getElementById("display");
+    
+        function clear1() {
+            display.value = "";
+        }
+        function calc() {
+            display.value = eval(display.value);
+        }
+        function press(x) {
+            display.value += x;
+        }
+    </script>
+</body>
